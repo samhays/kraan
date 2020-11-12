@@ -1,24 +1,23 @@
 kraan:
   kraanController:
     extraPodAnnotations:
-      ad.datadoghq.com/kraan-controller.logs: '[ { "source":"kraan-controller-source", "service":"kraan-controller-service"}]'
-      ad.datadoghq.com/kraan-controller.check_names: '["openmetrics"]'
-      ad.datadoghq.com/kraan-controller.init_configs: '[{}]'
-      ad.datadoghq.com/kraan-controller.instances: '[{"prometheus_url": "http://%%host%%:%%port%%/actuator/prometheus", "namespace": "kraan-controller", "metrics": ["*"], "ssl_ca_cert": false}]'
-
+      ad.datadoghq.com/manager.check_names: '["openmetrics"]'
+      ad.datadoghq.com/manager.init_configs: '[{}]'
+      ad.datadoghq.com/manager.instances: '[{"prometheus_url": "http://%%host%%:8080/metrics", "namespace": "kraan-controller", "metrics": ["*"]}]'
+      ad.datadoghq.com/manager.logs: '[ { "source":"kraan-controller", "service":"kraan-controller" }]'
 gotk:
   sourceController:
     extraPodAnnotations:
-      ad.datadoghq.com/source-controller.logs: '[ { "source":"source-controller-source", "service":"source-controller-service"}]'
-      ad.datadoghq.com/source-controller.check_names: '["openmetrics"]'
-      ad.datadoghq.com/source-controller.init_configs: '[{}]'
-      ad.datadoghq.com/source-controller.instances: '[{"prometheus_url": "http://%%host%%:%%port%%/actuator/prometheus", "namespace": "source-controller", "metrics": ["*"], "ssl_ca_cert": false}]'
+      ad.datadoghq.com/manager.check_names: '["openmetrics"]'
+      ad.datadoghq.com/manager.init_configs: '[{}]'
+      ad.datadoghq.com/manager.instances: '[{"prometheus_url": "http://%%host%%:8080/metrics", "namespace": "source-controller", "metrics": ["*"]}]'
+      ad.datadoghq.com/manager.logs: '[ { "source":"source-controller", "service":"source-controller" }]'
 
   helmController:
     extraPodAnnotations:
-      ad.datadoghq.com/helm-controller.logs: '[ { "source":"helm-controller-source", "service":"helm-controller-service"}]'
-      ad.datadoghq.com/helm-controller.check_names: '["openmetrics"]'
-      ad.datadoghq.com/helm-controller.init_configs: '[{}]'
-      ad.datadoghq.com/helm-controller.instances: '[{"prometheus_url": "http://%%host%%:%%port%%/actuator/prometheus", "namespace": "helm-controller", "metrics": ["*"], "ssl_ca_cert": false}]'
+      ad.datadoghq.com/manager.check_names: '["openmetrics"]'
+      ad.datadoghq.com/manager.init_configs: '[{}]'
+      ad.datadoghq.com/manager.instances: '[{"prometheus_url": "http://%%host%%:8080/metrics", "namespace": "helm-controller", "metrics": ["*"]}]'
+      ad.datadoghq.com/manager.logs: '[ { "source":"helm-controller", "service":"helm-controller" }]'
 
 

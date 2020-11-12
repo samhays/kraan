@@ -93,3 +93,25 @@ Parameter | Description | Default
 `gotk.helmController.nodeSelector` | nodeSelector settings for `helm-controller` | `{}`
 `gotk.helmController.affinity` | affinity settings for `helm-controller` | `{}`
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install` or use the `--values` to specify a comma seperated list of values files. The `samples` directory contains some example values files.
+
+## Monitoring
+
+Failed deployment log message:
+
+    {
+        "level": "info",
+        "ts": "2020-11-12T10:35:10.933Z",
+        "logger": "kraan.controller.reconciler",
+        "msg": "unsuccessful HelmRelease deployment",
+        "layer": "addons2",
+        "kind": "HelmRelease.helm.toolkit.fluxcd.io",
+        "namespace": "cluster-addons",
+        "name": "helm-release-name",
+        "resource": {
+            "apiVersion": "helm.toolkit.fluxcd.io/v2beta1",
+            "kind": "HelmRelease",
+            "namespace": "cluster-addons",
+            "name": "helm-release-name"
+        },
+        "sourcePath": "/layers/addons2/kraan-0.0.0"
+    }
