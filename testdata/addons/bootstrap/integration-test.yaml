@@ -30,6 +30,13 @@ spec:
     ignoreFailures: true
     timeout: "1m"
   values:
+    faults:
+      delay: false
+      error: false
+      unhealthy: false
+      unready: false
+      testFail: true
+      testTimeout: false
     preHookBackoffLimit: 1
     preHookActiveDeadlineSeconds: 60
     preHookRestartPolicy: Never
