@@ -27,7 +27,7 @@ spec:
       version: '>4.0.0'
   test:
     enable: true
-    ignoreFailures: true
+    ignoreFailures: false
     timeout: "1m"
   values:
     faults:
