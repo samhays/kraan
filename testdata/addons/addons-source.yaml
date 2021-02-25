@@ -6,5 +6,5 @@ metadata:
 spec:
   interval: 1m0s
   ref:
-    branch: master
+    branch: orphan-testdata
   url: https://github.com/fidelity/kraan.git
